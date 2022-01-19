@@ -39,3 +39,6 @@ For customized path, here are some args：
 
 Alternatively, you can also edit these options in the config file `./config.yml`.
 
+## Acknowledgement
+This project is modified based on the [Edge-Connect](https://github.com/knazeri/edge-connect) Model proposed by Nazeri et al.
+
