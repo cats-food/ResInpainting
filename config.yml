@@ -1,0 +1,61 @@
+#  select model, for testing, just set this to 3 or 4.
+MODEL: 4            # 1: inp1 model (G1 only), 2: inp2 model (G2 only), 3: inp1-2 model (fixed G1 + trainable G2), 4: joint model (both G1 G2 are trainable)
+
+## MODEL LOAD PATH
+ENABLE_D1: 0   # if set to 0, no discriminator for G1, and InpaintingModel1_D_LOAD_PATH will be invalid
+InpaintingModel1_G_LOAD_PATH: checkpoints/celeba/InpaintingModel1_G_00000000.pth    # path for loading G1
+InpaintingModel1_D_LOAD_PATH: --
+InpaintingModel2_G_LOAD_PATH: checkpoints/celeba/InpaintingModel2_G_00000000.pth  # path for loading G2
+InpaintingModel2_D_LOAD_PATH: checkpoints/celeba/InpaintingModel2_D_00000000.pth  # path for loading D2
+
+## MODEL SAVE PATH
+G_SAVE_PATH:  checkpoints/celeba  # path for saving G1 and G2
+D_SAVE_PATH: checkpoints/celeba # path for saving D2
+
+## IMAGE FLIST PATH
+TRAIN_FLIST: ./datasets/celeba_train.flist  # path to training image dataset (.flist file is recommended)
+TEST_FLIST: ./examples/celeba/images  # path to test image dataset (.flist file is recommended)
+
+## MASK FLIST PATH
+TRAIN_MASK_FLIST: ./datasets/masks_train.flist # path to training mask dataset (.flist file is recommended)
+TEST_MASK_FLIST: ./examples/celeba/masks # path to test mask dataset (.flist file is recommended)
+
+# path to save sampled images during the training
+SAMPLE_PATH: ./samples
+# path to save log files during the training
+LOG_PATH: checkpoints/celeba
+# path to save output images during the test. Note that the presence of --output arg of test.py can overwrite this
+RESULTS: ./results
+
+# training settings
+LR: 0.0001                    # learning rate
+D2G_LR: 0.1                   # discriminator/generator learning rate ratio
+BETA1: 0.9                    # adam optimizer beta1   0.0
+BETA2: 0.999                    # adam optimizer beta2   0.9
+BATCH_SIZE: 1                # input batch size for training
+NUM_WORKERS: 0                # num_works in DataLoader
+MAX_ITERS: 200000                # maximum number of iterations to train the model
+
+
+L1_LOSS_WEIGHT: 1             # l1 loss weight
+STYLE_LOSS_WEIGHT: 100          # style loss weight
+PERCEP_LOSS_WEIGHT: 0.1        # perceptual loss weight
+INPAINT_ADV_LOSS_WEIGHT: 0.1 # adversarial loss weight
+
+GAN_LOSS: nsgan               # nsgan | lsgan | hinge | wgan
+
+SAVE_INTERVAL: 5000         # how many iterations to wait before saving model (0: never) 5000
+SAMPLE_INTERVAL: 500        # how many iterations to wait before sampling (0: never)
+SAMPLE_SIZE: 5               # number of images to sample
+LOG_INTERVAL: 10              # how many iterations to wait before logging training status (0: never)
+
+
+
+# misc options
+SEED: 10            # random seed
+GPU: [0]            # list of gpu ids
+DEBUG: 0            # turns on debugging mode
+VERBOSE: 0          # turns on verbose mode in the output console
+MASK: 3             # 1: random block, 2: half, 3: external
+INPUT_SIZE: 0               # input image size for training 0 for original size
+INPUT0_SIZE: 128               # input size for stage 1
