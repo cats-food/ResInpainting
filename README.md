@@ -1,4 +1,4 @@
-# Residual Inpainting Using Free-Form Attention
+# Residual Inpainting Using Selective Free-Form Attention
 ## Prerequisites
 - Python 3.6
 - PyTorch 1.2
