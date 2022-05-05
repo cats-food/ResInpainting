@@ -3,10 +3,10 @@ MODEL: 4            # 1: inp1 model (G1 only), 2: inp2 model (G2 only), 3: inp1-
 
 ## MODEL LOAD PATH
 ENABLE_D1: 0   # if set to 0, no discriminator for G1, and InpaintingModel1_D_LOAD_PATH will be invalid
-InpaintingModel1_G_LOAD_PATH: checkpoints/celeba/InpaintingModel1_G_00000000.pth    # path for loading G1
+InpaintingModel1_G_LOAD_PATH: checkpoints/celeba/celeba_G1.pth    # path for loading G1
 InpaintingModel1_D_LOAD_PATH: --
-InpaintingModel2_G_LOAD_PATH: checkpoints/celeba/InpaintingModel2_G_00000000.pth  # path for loading G2
-InpaintingModel2_D_LOAD_PATH: checkpoints/celeba/InpaintingModel2_D_00000000.pth  # path for loading D2
+InpaintingModel2_G_LOAD_PATH: checkpoints/celeba/celeba_G2.pth  # path for loading G2
+InpaintingModel2_D_LOAD_PATH: checkpoints/celeba/celeba_D2.pth  # path for loading D2
 
 ## MODEL SAVE PATH
 G_SAVE_PATH:  checkpoints/celeba  # path for saving G1 and G2
