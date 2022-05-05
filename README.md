@@ -6,7 +6,7 @@
 - Some other frequently-used python packages, like opencv, numpy, imageio, etc.
 
 ## Datasets prepration
-We use [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) and [Paris Street View](https://github.com/pathak22/context-encoder) datasets. 
+We use [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), [Paris Street View](https://github.com/pathak22/context-encoder) and [Places2](http://places2.csail.mit.edu/) datasets. 
 The irregular mask dataset is available from [here](http://masc.cs.gmu.edu/wiki/partialconv).
 After Downloading images and masks, create .filst file containing the dataset path in `./datasets/` (some examples have been given, refer to so).
 
