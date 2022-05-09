@@ -28,7 +28,9 @@ Use `.test.py` for testing, you can directly run this script without any argumen
 ```shell script
 python test.py
 ```
-By default, this will inpaint the example images under the `examples/celeba/images` with the masks `examples/celeba/masks`. The output results will be saved in `./results`.
+By default, this will inpaint the example images under the `examples/celeba/images` with the masks `examples/celeba/masks`. The output results will be saved in `./results`. 
+
+Note that please use the original image rather than masked image as the input, our model will do the masking operation. Using masked image as input will introduce corss-color artifact since our model contains downsampling process. This issue will be fixed in the future.
 
 For customized path, here are some args：
 - `--G1` path to generator 1
