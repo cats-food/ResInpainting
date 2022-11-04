@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torchvision.models as models
 
-
+xxxxxxxx
 class AdversarialLoss(nn.Module):
     r"""
     Adversarial loss
